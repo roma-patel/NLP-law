@@ -1,3 +1,2 @@
-NLP-law
-\n
-This repository contains data from USCode-Cornell website and scripts and sample code for retrieving and analysing it.
+NLP-law: 
+ This repository contains data from USCode-Cornell website and scripts and sample code for retrieving and analysing it.

@@ -5,10 +5,8 @@ import matplotlib.pyplot as plt
 import math
 
 from sklearn.manifold import TSNE
-stop_words = ['the', 'at', 'by', 'is', 'has', 'given', 'such', 'on', 'have', 'that', 'this',
-              'who', 'whom', 'whose', 'where', 'how', 'or', 'and', 'be', 'to']
 file_name = 'wvec.txt'
-#f = open('checkkk1.txt', 'w+')
+
 def main():
     embeddings_file = 'wvec.txt'
     wv, vocabulary = load_embeddings(embeddings_file)

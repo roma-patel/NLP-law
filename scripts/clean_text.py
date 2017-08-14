@@ -1,5 +1,4 @@
 import numpy as np
-import math
 import json
 import urllib
 import bs4
@@ -7,12 +6,10 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk import word_tokenize
 from nltk import pos_tag
-import json
 import re
 
 prefix = "https://www.law.cornell.edu"
-dict_def_terms = {}
-def_gloss = {}
+dict_def_terms, def_gloss = {}, {}
 
 def flatten(list):
     final_list = []
@@ -63,7 +60,7 @@ def extract_text_statute(list_def, page_text):
         if re.search('( or or)+', item):
             item = re.sub('( or or)+', '', item)
         #if re.search(' ( )+', item):
-         #   item = re.sub(' ( )+', ' ', item)
+            #item = re.sub(' ( )+', ' ', item)
         if re.search('      ', item):
             item = re.sub('      ', ': ', item)
         if re.search(' ( )+', item):
@@ -196,7 +193,6 @@ def get_any_page(map, num, list):
 
 def per_title():
     count = 1
-    #newf = open('def.txt', 'w+')
     final_dict = {}
     with open('data.json', 'r') as f:
         for line in f:
@@ -216,7 +212,6 @@ def per_title():
                     vocab_dict[word] += 1
             final_dict[title] = vocab_dict
 
-           # print vocab_dict
     return final_dict
 
 if __name__ == '__main__':
